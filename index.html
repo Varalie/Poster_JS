@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Poster</title>
+    <link rel="stylesheet" href="stylesheets/layout.css">
+  </head>
+  <body>
+
+    <script src="./jquery.js"></script>
+
+    <!-- Lastpotion regular header -->
+    <header class='container text-center'>
+      <h1>Tiny cubic puzzle</h1>
+      <span>
+        Made by
+       <a href='http://aitorporro.com/'>Aitor Porro</a> with <a href='http://oxism.com/hexaflip/'>Hexaflip.js</a>
+      </span>
+    </header>
+    <!-- !Header -->
+
+    <!-- Cube Area -->
+    <div class="shapeContainer">
+      <div id="hexaflip-container-1"></div>
+      <div id="hexaflip-container-2"></div>
+      <div id="hexaflip-container-3"></div>
+      <div id="hexaflip-container-4"></div>
+      <div id="hexaflip-container-5"></div>
+      <div id="hexaflip-container-6"></div>
+      <div id="hexaflip-container-7"></div>
+      <div id="hexaflip-container-8"></div>
+      <div id="hexaflip-container-9"></div>
+    </div>
+    <!-- !Cube Area -->
+
+    <!-- Popup/Modal window -->
+    <div id="popup" class="popup">
+      <div class="container popup-inner text-center">
+        <h2>Well done!</h2>
+        <p>Thanks for playing :)</p>
+        <button id='play' class='btn btn-primary'>
+        Play again
+        </button>
+      </div>
+    </div>
+    <!-- !Popup/Modal -->
+
+<script>
+$(window).load(function() {
+  //Enable mobile support
+  var supportTouch = $.support.touch,
+    scrollEvent = "touchmove scroll",
+    touchStartEvent = supportTouch ? "touchstart" : "mousedown",
+    touchStopEvent = supportTouch ? "touchend" : "mouseup",
+    touchMoveEvent = supportTouch ? "touchmove" : "mousemove";
+
+  //Initialitzate the puzzle
+  setTimeout(function() {
+    randomizer();
+  }, 1000);
+
+  //Initialitzate the puzzle
+  var settings = {
+      size: 200,
+      margin: 0,
+      perspective: 450
+    },
+    hexaFlip = [];
+
+  //Generate the 9 cubes.
+  for (var i = 1; i < 10; ++i) {
+    hexaFlip[i] = new HexaFlip('#hexaflip-container-' + i + '', {
+      set1: [{
+        value: 'red',
+        style: {
+          backgroundColor: '#C41E3A',
+        }
+      }, {
+        value: 'green',
+        style: {
+          backgroundColor: '#009E60',}
+      }, {
+        value: 'blue',
+        style: {
+          backgroundColor: '#0051BA',
+        }
+      }, {
+        value: 'orange',
+        style: {
+          backgroundColor: '#FF5800',
+        }
+      }, {
+        value: 'yellow',
+        style: {
+          backgroundColor: '#FFD500',
+        }
+      }, ]
+    }, settings)
+  }
+
+ //Re-initalize the puzzle when it's done
+ $('#play').bind('click', function() {
+   $('#popup').transit({
+      opacity: 0,
+      delay: 100
+    }, function() {
+      $(this).hide();
+      randomizer();
+    });
+ });
+
+  //Randomize the number of flips when initialize the puzzle
+  var randomizer = function() {
+    for (var j = 1; j < 10; j++) {
+      var random = Math.floor(Math.random() * 6) + 2;
+      for (var i = 1; i < random; i++) {
+        hexaFlip[j].flip();
+      }
+    }
+  };
+
+  //When transition ends, check if the cube is completed.
+  $('.hexaflip-cube').bind('transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd', function(event) {
+    var passcode = [];
+    for (var i = 0; i < 9; ++i) {
+      passcode[i] = String(hexaFlip[i + 1].getValue());
+      if (passcode.length === 9) {
+        var r = passcode.allValuesSame();
+        if (r === true) {
+          $('.popup').show().transit({
+            opacity: 1
+          });
+          $('#popup .image-wrapper').addClass('animate');
+          setTimeout(function() {
+            $('#popup .copy-wrapper').addClass('animate');
+          }, 600);
+        }
+      }
+    }
+  });
+
+  //Function to compare if all the vallues are the same.
+  Array.prototype.allValuesSame = function() {
+    for (var i = 1; i < this.length; i++) {
+      if (this[i] !== this[0])
+        return false;
+    }
+    return true;
+  }
+
+});
+</script>
+
+
+  </body>
+</html>

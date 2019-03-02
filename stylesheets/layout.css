@@ -1,0 +1,144 @@
+/************
+* Imports
+*************/
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,700,300);
+
+/************
+* Variables
+*************/
+
+/* Colors */
+$white :  #FFFFFF;
+$red   :  #D72B37;
+$gray  :  #8A8A8A;
+
+/************
+* Styles
+*************/
+*{box-sizing: border-box;}
+
+body{
+  background-color: rgb(175, 163, 203);
+  font-family: "Roboto" ,sans-serif;
+}
+
+.container {
+  margin-top:5%;
+}
+.container a {
+  color:red;
+}
+.container span {
+  color:gray;
+  font-weight:300;
+}
+.container p {
+  margin-top:20px;
+  font-weight:400;
+  font-size:16px;
+}
+/************
+* Hexaflip
+*************/
+
+.shapeContainer {
+  width:600px;
+  height:600px;
+  display:block;
+  margin:3% auto;
+  z-index: 50;
+}
+
+.shapeContainer > div {
+  display: inline-block;
+  float: left;
+  position: relative;
+  z-index: 0;
+}
+
+.hexaflip-cube {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  cursor: move;
+  cursor: grab;
+  display: inline-block;
+  position: relative;
+  transform-style: preserve-3d;
+}
+
+.hexaflip-cube .hexaflip-side {
+  text-indent: -9999px;
+  width: 100%;
+  overflow: hidden;
+  height: 100%;
+  position: absolute;
+  user-select: none;
+  background-size: cover;
+  text-align: center;
+  background-color: #333;
+  box-shadow: 0px 0px 1px #fff;
+}
+
+.hexaflip-cube div {
+  transition: 0.4s;
+  transform-style: preserve-3d;
+}
+
+.hexaflip-cube div .no-tween {
+  transition-duration: 0s;
+}
+
+.hexaflip-cube:active {
+  cursor: move;
+  cursor: grabbing;
+}
+
+.hexaflip-cube
+.hexaflip-side-left,
+.hexaflip-side-right {
+  background-color: #1e2026 !important;
+}
+
+.hexaflip-timepicker .hexaflip-cube:last-child .hexaflip-side:nth-child(odd) {
+  background-color: #1e2026;
+}
+
+/************
+* Popup
+*************/
+.popup {
+  background-color: rgba(0,0,0,0.4);
+  display:none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  overflow: hidden;
+  z-index: 8000;
+}
+
+.popup .popup-inner {
+  max-width:600px;
+  min-height:200px;
+  display:block;
+  margin:3% auto;
+  z-index: 50;
+  height:auto;
+  width: 75%;
+  position:absolute;
+  top:45%;
+  left:50%;
+  transform: translate3d(-50%,-45%,0);
+  background: #fff;
+}
+
+.popup .popup-inner h2 {
+  font-size:40px;
+}
+
+.popup .popup-inner button {
+  font-weight:700;
+  margin: 20px auto;
+}
