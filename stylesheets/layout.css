@@ -1,96 +1,112 @@
-/************
-* Imports
-*************/
-@import url(https://fonts.googleapis.com/css?family=Roboto:400,700,300);
-
-/************
-* Variables
-*************/
-
-/* Colors */
-$white :  #FFFFFF;
-$red   :  #D72B37;
-$gray  :  #8A8A8A;
-
-/************
-* Styles
-*************/
 *{box-sizing: border-box;}
 
 body{
-  background-color: rgb(175, 163, 203);
-  font-family: "Roboto" ,sans-serif;
+  background-color: rgb(187, 158, 219);
+
+  font-family: "Roboto", sans-serif;
+}
+
+.header h1 {
+  margin-top: 30px;
+  margin-left: 50px;
+
+  font-family: 'Rubik Mono One', sans-serif;
+  font-size: 15em;
+}
+
+.header h2 {
+  margin-top: -200px;
+  margin-left: 60px;
+
+  font-family: 'Rubik Mono One', sans-serif;
+  font-size: 2em;
 }
 
 .container {
   margin-top:5%;
 }
-.container a {
-  color:red;
+
+.container a{
+  color: #D72B37;
 }
-.container span {
-  color:gray;
+
+.container span{
+  color: #8A8A8A;
+
   font-weight:300;
 }
-.container p {
+
+.container p{
   margin-top:20px;
-  font-weight:400;
+
   font-size:16px;
+  font-weight:400;
 }
-/************
-* Hexaflip
-*************/
+
+/*Hexaflip*/
 
 .shapeContainer {
+  z-index: 50;
+
+  display:block;
+
   width:600px;
   height:600px;
-  display:block;
   margin:3% auto;
-  z-index: 50;
+
 }
 
-.shapeContainer > div {
-  display: inline-block;
-  float: left;
+.shapeContainer div{
   position: relative;
   z-index: 0;
+
+  display: inline-block;
+  float: left;
 }
 
 .hexaflip-cube {
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
+  position: relative;
+
+  display: inline-block;
+
   cursor: move;
   cursor: grab;
-  display: inline-block;
-  position: relative;
+
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
   transform-style: preserve-3d;
-}
-
-.hexaflip-cube .hexaflip-side {
-  text-indent: -9999px;
-  width: 100%;
-  overflow: hidden;
-  height: 100%;
-  position: absolute;
-  user-select: none;
-  background-size: cover;
-  text-align: center;
-  background-color: #333;
-  box-shadow: 0px 0px 1px #fff;
-}
-
-.hexaflip-cube div {
-  transition: 0.4s;
-  transform-style: preserve-3d;
-}
-
-.hexaflip-cube div .no-tween {
-  transition-duration: 0s;
 }
 
 .hexaflip-cube:active {
   cursor: move;
   cursor: grabbing;
+}
+
+.hexaflip-cube .hexaflip-side {
+  position: absolute;
+
+  overflow: hidden;
+
+  width: 100%;
+  height: 100%;
+
+  user-select: none;
+  text-align: center;
+  text-indent: -9999px;
+
+  background-color: #333;
+  background-size: cover;
+  box-shadow: 0px 0px 3px rgb(0, 0, 0);
+}
+
+.hexaflip-cube div {
+  transition: transform 0.4s;
+
+  transform-style: preserve-3d;
+}
+
+.hexaflip-cube div .no-tween {
+  transition-duration: 0s;
 }
 
 .hexaflip-cube
@@ -103,42 +119,88 @@ body{
   background-color: #1e2026;
 }
 
-/************
-* Popup
-*************/
+/*Popup*/
+
 .popup {
-  background-color: rgba(0,0,0,0.4);
-  display:none;
   position: absolute;
+  z-index: 8000;
+  top: 0;
+  left: 0;
+
+  display:none;
+  overflow: hidden;
+
   width: 100%;
   height: 100%;
-  left: 0;
-  top: 0;
-  opacity: 0;
-  overflow: hidden;
-  z-index: 8000;
+
+  opacity: 0;
+  background-color: rgba(73, 17, 124, 0.74);
 }
 
 .popup .popup-inner {
-  max-width:600px;
-  min-height:200px;
-  display:block;
-  margin:3% auto;
-  z-index: 50;
-  height:auto;
-  width: 75%;
   position:absolute;
+  z-index: 50;
   top:45%;
   left:50%;
+
+  display:block;
+
+  width: 75%;
+  max-width:400px;
+  height:auto;
+  min-height:200px;
+  margin:3% auto;
+
   transform: translate3d(-50%,-45%,0);
-  background: #fff;
+
+  background: rgba(#000000, 0.57);
 }
 
 .popup .popup-inner h2 {
-  font-size:40px;
+  color: rgb(255, 255, 255);
+
+  font-size:50px;
 }
 
-.popup .popup-inner button {
-  font-weight:700;
+.popup .popup-inner h2 button{
   margin: 20px auto;
+
+  font-weight:700;
+}
+
+.button_play {
+  display: inline-block;
+
+  padding: 5px 10px;
+
+  text-align: center;
+  text-decoration: none;
+
+  color: rgb(0, 0, 0);
+  border-radius: 10px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.75);
+
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+}
+
+.button {
+  width: 200px;
+  height: 75px;
+  margin: 40px 200px;
+
+  color: white;
+  border-radius: 15px;
+  background-color: black;
+  box-shadow: 0 5px 20px rgba(142, 139, 139, 0.75);
+
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+}
+
+.button > h1 {
+  margin: 14.5px auto;
+
+  text-align: center;
 }
