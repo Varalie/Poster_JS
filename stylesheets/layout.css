@@ -179,9 +179,11 @@ body{
   text-align: center;
   text-decoration: none;
 
-  color: white;
-  border-radius: 5px;
-  background-color: black;
+  color: rgb(0, 0, 0);
+  border-width: 3px;
+  border-color: rgb(0, 0, 0);
+  border-radius: 7px;
+  background-color: rgba(0, 0, 0, 0);
 
   font-family: "Roboto", sans-serif;
   font-size: 20px;
@@ -232,7 +234,7 @@ a:hover {
 .button {
   position: relative;
 
-  margin-top: 80px;
+  margin-top: 60px;
   margin-left: 155px;
   padding: 1rem 1rem;
 
@@ -362,15 +364,148 @@ a:hover {
   }
 }
 
-@media all and (min-width: 321px) and (max-width: 375px){
+@media all and (max-width: 1024px) {
+  .button_play {
+    padding: 10px 10px;
+
+    font-size: 40px;
+  }
+
+  .facebook {
+    width: 100px;
+    height: 100px;
+  }
+
+  .portfolio {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+@media all and (max-width: 768px) {
+  .header h2 {
+    font-size: 3.5vw;
+  }
+
+  .popup .popup-inner {
+    top: 40%;
+    left: 50%;
+
+    max-width: 550px;
+  }
+
+  .button_play {
+    padding: 10px 10px;
+
+    font-size: 30px;
+  }
+
+  .facebook {
+    padding: 0px;
+  }
+
+  .portfolio {
+    padding: 0px;
+  }
+}
+
+@media all and (min-width: 415px) and (max-width: 610px){
+  .header h1 {
+    margin-left: 25px;
+
+    font-size: 105px;
+  }
+
+  .header h2 {
+    margin-top: -15vw;
+    margin-left: 25px;
+
+    font-size: 20px;
+  }
+
+  .shapeContainer {
+    margin-top: 25px;
+    margin-left: -5.5px;
+  }
+
+  .background span {
+    width: 200vw;
+    height: 30vh;
+  }
+}
+
+@media all and (min-width: 600px) and (max-width: 700px){
+  .header h1 {
+    margin-left: 30px;
+  }
+
+  .header h2 {
+    margin-left: 30px;
+  }
+}
+
+@media all and (min-width: 376px) and (max-width: 414px) {
+  .header h1 {
+    margin-left: 25px;
+
+    font-size: 25vw;
+  }
+
+  .header h2 {
+    margin-top: -15vw;
+    margin-left: 25px;
+
+    font-size: 5vw;
+  }
+
+  .shapeContainer {
+    margin-top: 25px;
+    margin-left: -10px;
+  }
+
+  .popup {
+    width: 145vw;
+    height: 200vh;
+  }
+
+  .popup .popup-inner {
+    top: 33%;
+    left: 55%;
+
+    max-width: 400px;
+  }
+
+  .button_play {
+    padding: 10px 10px;
+
+    font-size: 35px;
+  }
+
+  .facebook {
+    padding: 0px;
+  }
+
+  .portfolio {
+    padding: 0px;
+  }
+
+  .background span {
+    width: 180vw;
+    height: 30vh;
+  }
+}
+
+
+
+@media all and (min-width: 321px) and (max-width: 375px) {
   .header h1 {
     font-size: 25vw;
   }
 
   .header h2 {
-    margin-top: -20vw;
+    margin-top: -16vw;
 
-    font-size: 4vw;
+    font-size: 5vw;
   }
 
   .shapeContainer {
@@ -379,26 +514,34 @@ a:hover {
   }
 
   .popup {
-    width: 200vw;
+    width: 160vw;
     height: 200vh;
   }
 
   .popup .popup-inner {
     top: 35%;
-    left: 45%;
+    left: 55%;
 
     max-width: 400px;
   }
 
-  .button_play{
-    padding: 20px 20px;
+  .button_play {
+    padding: 10px 10px;
 
-    font-size: 50px;
+    font-size: 35px;
+  }
+
+  .facebook {
+    padding: 0px;
+  }
+
+  .portfolio {
+    padding: 0px;
   }
 
   .background span {
     width: 180vw;
-    height: 30vh;
+    height: 40vh;
   }
 }
 
@@ -410,7 +553,7 @@ a:hover {
   .header h2 {
     margin-top: -20vw;
 
-    font-size: 5vw;
+    font-size: 6vw;
   }
 
   .shapeContainer {
@@ -436,17 +579,15 @@ a:hover {
   .button_play {
     padding: 10px 10px;
 
-    font-size: 50px;
+    font-size: 40px;
   }
 
   .facebook {
-    padding: 5px;
-
+    padding: 0px;
   }
 
   .portfolio {
-    padding: 5px;
-
+    padding: 0px;
   }
 
   .background span {
