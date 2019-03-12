@@ -505,7 +505,7 @@ a:hover {
   .header h2 {
     margin-top: -16vw;
 
-    font-size: 5vw;
+    font-size: 6vw;
   }
 
   .shapeContainer {
@@ -532,11 +532,11 @@ a:hover {
   }
 
   .facebook {
-    padding: 0px;
+    padding: 11px;
   }
 
   .portfolio {
-    padding: 0px;
+    padding: 11px;
   }
 
   .background span {
@@ -583,11 +583,11 @@ a:hover {
   }
 
   .facebook {
-    padding: 0px;
+    padding: 10px;
   }
 
   .portfolio {
-    padding: 0px;
+    padding: 10px;
   }
 
   .background span {
