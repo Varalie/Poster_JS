@@ -1,7 +1,9 @@
 *{box-sizing: border-box;}
 
 body{
-  background-color: rgb(187, 158, 219);
+  cursor: default;
+
+  background-color: rgb(199, 179, 221);
 
   font-family: "Roboto", sans-serif;
 }
@@ -11,15 +13,15 @@ body{
   margin-left: 50px;
 
   font-family: 'Rubik Mono One', sans-serif;
-  font-size: 15em;
+  font-size: 15vw;
 }
 
 .header h2 {
-  margin-top: -200px;
+  margin-top: -170px;
   margin-left: 60px;
 
   font-family: 'Rubik Mono One', sans-serif;
-  font-size: 2em;
+  font-size: 2vw;
 }
 
 .container {
@@ -122,7 +124,7 @@ body{
 /*Popup*/
 
 .popup {
-  position: absolute;
+  position: fixed;
   z-index: 8000;
   top: 0;
   left: 0;
@@ -130,11 +132,11 @@ body{
   display:none;
   overflow: hidden;
 
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
 
   opacity: 0;
-  background-color: rgba(73, 17, 124, 0.74);
+  background-color: #cbfed2;
 }
 
 .popup .popup-inner {
@@ -145,8 +147,8 @@ body{
 
   display:block;
 
-  width: 75%;
-  max-width:400px;
+  width: 100%;
+  max-width:800px;
   height:auto;
   min-height:200px;
   margin:3% auto;
@@ -157,7 +159,7 @@ body{
 }
 
 .popup .popup-inner h2 {
-  color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
 
   font-size:50px;
 }
@@ -171,41 +173,67 @@ body{
 .button_play {
   display: inline-block;
 
-  padding: 5px 10px;
+  padding: 10px 10px;
 
+  cursor: pointer;
   text-align: center;
   text-decoration: none;
 
-  color: rgb(0, 0, 0);
-  border-radius: 10px;
-  background-color: rgb(255, 255, 255);
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.75);
+  color: white;
+  border-radius: 5px;
+  background-color: black;
 
   font-family: "Roboto", sans-serif;
   font-size: 20px;
 }
+
+a {
+  color: black;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+a:active {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+
+  color: rgb(175, 9, 9);
+}
+
+/*end popup*/
 
 .button {
   width: 200px;
-  height: 75px;
+  height: 55px;
   margin: 40px 200px;
 
+  cursor: pointer;
+
   color: white;
-  border-radius: 15px;
+  border-radius: 5px;
   background-color: black;
-  box-shadow: 0 5px 20px rgba(142, 139, 139, 0.75);
 
   font-family: "Roboto", sans-serif;
-  font-size: 20px;
+  font-size: 15px;
 }
 
 .button > h1 {
-  margin: 14.5px auto;
+  margin: 10px auto;
 
   text-align: center;
 }
 
 /*background*/
+
 .background {
   position: fixed;
   z-index: -1;
@@ -224,45 +252,43 @@ body{
   width: 100%;
   height: 16.66vh;
 
-  animation: adjust 2500ms ease-in infinite;
-
-  background: #f9cbdb;
+  animation: adjust 7000ms ease-in infinite;
 }
 
 .background span:nth-child(1) {
-  animation-delay: 1000ms;
+  animation-delay: 0ms;
 
-  background-color: #f7bed2;
+  background-color: #fecbd6;
 }
 
 .background span:nth-child(2) {
-  animation-delay: 2000ms;
+  animation-delay: 200ms;
 
-  background-color: #F6B1C9;
+  background-color: #fecbd6;
 }
 
 .background span:nth-child(3) {
-  animation-delay: 3000ms;
+  animation-delay: 400ms;
 
-  background-color: #F4A4C0;
+  background-color: #fecbd6;
 }
 
 .background span:nth-child(4) {
-  animation-delay: 4000ms;
+  animation-delay: 600ms;
 
-  background-color: #F397B7;
+  background-color: #fecbd6;
 }
 
 .background span:nth-child(5) {
-  animation-delay: 5000ms;
+  animation-delay: 800ms;
 
-  background-color: #F18AAE;
+  background-color: #fecbd6;
 }
 
 .background span:nth-child(6) {
-  animation-delay: 6000ms;
+  animation-delay: 1000ms;
 
-  background-color: #f07ea6;
+  background-color: #fecbd6;
 }
 
 @keyframes adjust {
