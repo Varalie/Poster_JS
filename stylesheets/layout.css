@@ -209,6 +209,24 @@ a:hover {
   color: rgb(175, 9, 9);
 }
 
+.facebook {
+  float: right;
+
+  width: 60px;
+  height: 60px;
+  padding: 10px;
+
+}
+
+.portfolio {
+  float: left;
+
+  width: 60px;
+  height: 60px;
+  padding: 10px;
+
+}
+
 /*end popup*/
 
 .button {
@@ -354,7 +372,7 @@ a:hover {
   }
 
   .popup {
-    width: 200vw;
+    width: 187vw;
     height: 200vh;
   }
 
@@ -372,6 +390,16 @@ a:hover {
     padding: 10px 10px;
 
     font-size: 40px;
+  }
+
+  .facebook {
+    padding: 5px;
+
+  }
+
+  .portfolio {
+    padding: 5px;
+
   }
 
   .background span {
