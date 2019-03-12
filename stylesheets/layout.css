@@ -204,3 +204,75 @@ body{
 
   text-align: center;
 }
+
+/*background*/
+.background {
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  left: 0;
+
+  width: 100vw;
+  height: 100vh;
+}
+
+.background span {
+  position: relative;
+
+  display: block;
+
+  width: 100%;
+  height: 16.66vh;
+
+  animation: adjust 2500ms ease-in infinite;
+
+  background: #f9cbdb;
+}
+
+.background span:nth-child(1) {
+  animation-delay: 1000ms;
+
+  background-color: #f7bed2;
+}
+
+.background span:nth-child(2) {
+  animation-delay: 2000ms;
+
+  background-color: #F6B1C9;
+}
+
+.background span:nth-child(3) {
+  animation-delay: 3000ms;
+
+  background-color: #F4A4C0;
+}
+
+.background span:nth-child(4) {
+  animation-delay: 4000ms;
+
+  background-color: #F397B7;
+}
+
+.background span:nth-child(5) {
+  animation-delay: 5000ms;
+
+  background-color: #F18AAE;
+}
+
+.background span:nth-child(6) {
+  animation-delay: 6000ms;
+
+  background-color: #f07ea6;
+}
+
+@keyframes adjust {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(100%, 0, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
