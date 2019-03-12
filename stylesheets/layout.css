@@ -13,15 +13,15 @@ body{
   margin-left: 50px;
 
   font-family: 'Rubik Mono One', sans-serif;
-  font-size: 15vw;
+  font-size: 17vw;
 }
 
 .header h2 {
-  margin-top: -170px;
+  margin-top: -12vw;
   margin-left: 60px;
 
   font-family: 'Rubik Mono One', sans-serif;
-  font-size: 2vw;
+  font-size: 2.5vw;
 }
 
 .container {
@@ -300,5 +300,24 @@ a:hover {
   }
   100% {
     transform: translate3d(0, 0, 0);
+  }
+}
+
+@media all and (max-width: 320px) {
+  .header h1 {
+    font-size: 30vw;
+  }
+
+  .header h2 {
+    margin-top: -20vw;
+
+    font-size: 5vw;
+  }
+  .popup {
+    width: 200vw;
+    height: 200vh;
+  }
+  .popup .popup-inner {
+    max-width:400px;
   }
 }
