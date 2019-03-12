@@ -223,29 +223,70 @@ a:hover {
 
   width: 60px;
   height: 60px;
-  padding: 10px;
+  padding: 11px;
 
 }
 
 /*end popup*/
 
 .button {
-  width: 200px;
-  height: 55px;
-  margin: 40px 200px;
+  position: relative;
 
-  cursor: pointer;
+  margin-top: 80px;
+  margin-left: 155px;
+  padding: 1rem 1rem;
 
-  color: white;
-  border-radius: 5px;
-  background-color: black;
+  color: #111111;
+  outline: none;
+  background: transparent;
 
   font-family: "Roboto", sans-serif;
-  font-size: 15px;
+  font-size: 20px;
+}
+
+.button::after, .button::before {
+  position: absolute;
+  z-index: -2;
+
+  width: 90px;
+  height: 90px;
+
+  content: "";
+  transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transform: skewX(0deg);
+}
+
+.button::before {
+  top: -2rem;
+  left: 3rem;
+
+  background-color: #9ef49c;
+}
+
+.button::after {
+  top: 1rem;
+  left: 6rem;
+
+  background-color: #f77474;
+}
+
+.button:hover::before, .button:hover::after {
+  top: 0;
+
+  transform: skewx(0deg);
+}
+
+.button:hover::after {
+  left: 3.1rem;
+}
+
+.button:hover::before {
+  left: 8.75rem;
 }
 
 .button > h1 {
-  margin: 10px auto;
+  margin: 7px 60px;
+  padding-bottom: 50px;
 
   text-align: center;
 }
@@ -349,6 +390,12 @@ a:hover {
     max-width: 400px;
   }
 
+  .button_play{
+    padding: 20px 20px;
+
+    font-size: 50px;
+  }
+
   .background span {
     width: 180vw;
     height: 30vh;
@@ -386,10 +433,10 @@ a:hover {
     font-size: 60px;
   }
 
-  .button_play{
+  .button_play {
     padding: 10px 10px;
 
-    font-size: 40px;
+    font-size: 50px;
   }
 
   .facebook {
