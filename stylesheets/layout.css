@@ -388,7 +388,7 @@ a:hover {
   }
 
   .popup .popup-inner {
-    top: 40%;
+    top: 50%;
     left: 50%;
 
     max-width: 550px;
@@ -481,7 +481,7 @@ a:hover {
   }
 
   .popup .popup-inner {
-    top: 33%;
+    top: 40%;
     left: 55%;
 
     max-width: 400px;
@@ -526,7 +526,7 @@ a:hover {
   }
 
   .popup .popup-inner {
-    top: 35%;
+    top: 40%;
     left: 55%;
 
     max-width: 400px;
@@ -569,7 +569,7 @@ a:hover {
   }
 
   .popup .popup-inner {
-    top: 40%;
+    top: 45%;
 
     max-width: 400px;
   }
